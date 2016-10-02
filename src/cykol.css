@@ -23,6 +23,7 @@
     white-space: normal;
     display: inline-block;
     vertical-align: middle;
+    padding: 0!important; /* The slides cannot have padding or it will ruin the layout. Padding should be added to a container inside the slide */
     
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
