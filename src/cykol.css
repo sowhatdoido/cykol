@@ -23,7 +23,8 @@
     white-space: normal;
     display: inline-block;
     vertical-align: middle;
-    padding: 0!important; /* The slides cannot have padding or it will ruin the layout. Padding should be added to a container inside the slide */
+    padding: 0!important; /* The slides cannot have padding or borders as it will ruin the layout.  */
+    border: none!important; /* padding and borders can be added if you wrap the slides in a div and style the content instead */
     
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
@@ -37,9 +38,9 @@
     /*
         You can adjust the easing and duration here.
     */
-    -webkit-transition: all ease 250ms;
-    -o-transition: all ease 250ms;
-    transition: all ease 250ms;
+    -webkit-transition: all ease 5s;
+    -o-transition: all ease 5s;
+    transition: all ease 5s;
 }
 .cykol-slide-active,
 .cykol-slide-preview {
@@ -60,6 +61,8 @@
     -ms-transform: scale(0.5);
     -o-transform: scale(0.5);
     transform: scale(0.5);
+    
+    cursor: pointer;
 }
 .cykol-slide-active {
     -webkit-transform: scale(1);

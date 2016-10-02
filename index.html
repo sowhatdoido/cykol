@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    
-    <link rel="stylesheet" href="src/cykol.css">
-    
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <link rel="stylesheet" href="src/cykol.css">    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--script src="node_modules/jquery/dist/jquery.min.js"></script-->
     <script src="src/cykol.js"></script>
@@ -30,28 +30,52 @@
     <legend>DIV Carousel</legend>
     <div id="div-carousel">
         <div>
-            <h2>Hello World</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="content">
+                <h2>Hello World</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
         </div>
         <div>
-            <h2>Hello World</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="content">
+                <h2>Hello World</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
         </div>
         <div>
-            <h2>Hello World</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="content">
+                <h2>Hello World</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
         </div>
         <div>
-            <h2>Hello World</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="content">
+                <h2>Hello World</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
         </div>
         <div>
-            <h2>Hello World</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="content">
+                <h2>Hello World</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
         </div>
         <div>
-            <h2>Hello World</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="content">
+                <h2>Hello World</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div>
+            <div class="content">
+                <h2>Hello World</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div>
+            <div class="content">
+                <h2>Hello World</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
         </div>
     </div>
     
@@ -78,15 +102,18 @@
             border-bottom: 1px solid;
         }
         
-        #div-carousel > div {
+        #div-carousel .cykol-slide {
             background: gray;
             font-size: 16px;
             min-height: 200px;
             width: 200px;
-            
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
+        }
+        #div-carousel .cykol-slide .content {
+            padding: 20px;
+        }
+        
+        #image-carousel img.cykol-slide {
+            max-width: 100%;
         }
     </style>
 </body>
