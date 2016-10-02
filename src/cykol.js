@@ -43,7 +43,8 @@
         var instance = this;
         var $wrapper = this.element;
         
-        var swipeYTolerance = 100; // Swipe distance above this value in the Y direction is ignored
+        var swipeYTolerance = 25; //Swipe distance above this value in the Y direction is ignored
+        var swipeXTolerance = 200; //Swipe distance below this value in the X direction is ignored
         var touchstartX = 0;
         var touchstartY = 0;
         var touchendX = 0;
@@ -59,7 +60,7 @@
                 touchendX = e.changedTouches[0].clientX;
                 touchendY = e.changedTouches[0].clientY;
 
-                if(Math.abs(touchendY - touchstartY) > swipeYTolerance){
+                if(Math.abs(touchendY - touchstartY) > swipeYTolerance && Math.abs(touchendX - touchstartX) < swipeXTolerance){
                     // If we're swiping more in the Y direction(above the tolerance), don't handle the event
                     return false;
                 }
