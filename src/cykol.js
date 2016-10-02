@@ -23,6 +23,9 @@
     
     Cykol.prototype.setActiveSlide = function(slide){
         if(slide.length == 0) return false;
+        
+        this.clearSlideStyles(); //remove existing classes first
+        
         this.activeSlide = slide;
         this.activeSlide.addClass('cykol-slide-active');
         
@@ -35,7 +38,24 @@
         
         return true;
     }
-
+    
+    Cykol.prototype.clearSlideStyles = function(){
+        this.element.find('.cykol-slide-preview').removeClass('cykol-slide-preview');
+        this.element.find('.cykol-slide-active').removeClass('cykol-slide-active');
+    }
+    
+    Cykol.prototype.advanceToSlide = function(slide){
+        this.setActiveSlide(slide);
+    }
+    
+    Cykol.prototype.nextSlide = function(){
+        this.advanceToSlide(this.activeSlide.next());
+    }
+    
+    Cykol.prototype.prevSlide = function(){
+        this.advanceToSlide(this.activeSlide.prev());
+    }
+    
     /* Add a hook so we can use jQuery syntax to call our plugin */
     jQuery.fn.cykol = function(options){
         return new Cykol(this, options);
