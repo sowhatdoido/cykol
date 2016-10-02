@@ -3,8 +3,8 @@
         continuous: true, //Set to false for the carousel to stop at the edges
         swipe: true, //Set to false to disable swipe support
         duration: 250, //animation duration in ms
-        easing: 'ease' //linear, ease, or other CSS3 supported easing calls
-        //timeout: 0 //Time to auto advance to next in ms, 0 disables the feature
+        easing: 'ease', //linear, ease, or other CSS3 supported easing calls
+        timeout: 0 //Time to auto advance to next in ms, 0 disables the feature
     };
     
     /* 
@@ -21,7 +21,6 @@
     };
     
     Cykol.prototype.init = function(){
-        var instance = this;
         var $wrapper = this.element;
         
         $wrapper.children().addClass('cykol-slide');
@@ -41,6 +40,7 @@
         
         //Attach transition css live for easier configuration
         //Wrapped in a setTimeout to delay the animation trigger on load
+        var instance = this;
         setTimeout(
             function(){
                 var transition = 'all ' + instance.options.duration + 'ms ' + instance.options.easing;
@@ -52,6 +52,10 @@
             }
         , 0);
         
+        //Start auto if set
+        if(this.options.timeout > 0){
+            this.autoplay();
+        }
                 
         if(typeof this.options.onInit == 'function') this.options.onInit(); //Callback function run after initialization
     }
@@ -128,6 +132,11 @@
     Cykol.prototype.advanceToSlide = function(slide){
         this.setActiveSlide(slide);
         if(typeof this.options.onAnimation == 'function') this.options.onAnimation(); //Callback function run after slide transition starts.
+        
+        if(this.options.timeout > 0){
+            if(this.autoplayTimer) clearInterval(this.autoplayTimer);
+            this.autoplay();
+        }
     }
     
     Cykol.prototype.nextSlide = function(){
@@ -137,7 +146,7 @@
             //To continously advance forward, we take first child and insert it to the back of the line. 
             var $wrapper = this.element;
             $wrapper.find('>:first-child').appendTo($wrapper).after(' ');
-        }
+        }       
     }
     
     Cykol.prototype.prevSlide = function(){
@@ -157,6 +166,17 @@
             //`.after(' ')` is required because DOM Objects usually have spaces between them that are removed when appending and prepending
             $wrapper.find('>:last-child').prependTo($wrapper).after(' '); 
         }
+    }
+    
+    Cykol.prototype.autoplay = function(){
+        var instance = this;
+        this.autoplayTimer = setTimeout(function(){
+            instance.nextSlide();
+        }, this.options.timeout);
+    }
+    
+    Cykol.prototype.stop = function(){
+        clearTimeout(this.autoplayTimer);
     }
     
     /* Add a hook so we can use jQuery syntax to call our plugin */

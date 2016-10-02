@@ -42,6 +42,7 @@ Since the animation portion of the plugin is driven by CSS3, you can use CSS edi
 - `easing`: CSS3 defined easing (`ease`, `linear`, `cubic-bezier`, etc)
 - `continuous`: Takes `true || false`. Sets up carousel to loop or end at the edges.
 - `swipe`: Takes `true || false`. Determines whether bindings for swipe events will occur.
+- `timeout`: Default is `0`. Time in milliseconds for autoplaying the carousel
 - `onInit`: Function to be run after a new cykol instance is created
 - `onAnimation`: Function to be run after a transition starts
 
