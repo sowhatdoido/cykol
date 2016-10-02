@@ -35,6 +35,7 @@ var c2 = $('#div-wrapper').cykol({...}); // added since we're using jQuery
 ```
 
 ### Options
+- `continuous`: Takes `true || false`. Sets up carousel to loop or end at the edges.
 - `onInit`: Function to be run after a new cykol instance is created
 - `onAnimation`: Function to be run after a transition starts
 

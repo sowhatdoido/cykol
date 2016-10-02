@@ -1,5 +1,8 @@
 ;(function($){
-    var defaults = {};
+    var defaults = {
+        continuous: true, // Set to false for the carousel to stop at the edges
+        //timeout: 0 // Time to auto advance to next in ms, 0 disables the feature
+    };
     
     /* 
         Constructor
@@ -18,8 +21,17 @@
         var $wrapper = this.element;
         
         $wrapper.addClass('cykol-wrapper');
-        this.setActiveSlide($wrapper.find('>:nth-child(2)'));
         
+        if(this.options.continuous == true){
+            // If the carousel is going to be continuous, the last item prepends to the left side of the first item
+            // Then we set the second item to active
+            $wrapper.find('>:last-child').prependTo($wrapper).after(' ');
+            this.setActiveSlide($wrapper.find('>:nth-child(2)')); 
+        } else {
+            // If the carousel isn't continuous, start at the first item
+            this.setActiveSlide($wrapper.find('>:nth-child(1)')); 
+        }
+                
         if(typeof this.options.onInit == 'function') this.options.onInit(); //Callback function run after initialization
     }
     
@@ -53,10 +65,23 @@
     
     Cykol.prototype.nextSlide = function(){
         this.advanceToSlide(this.activeSlide.next());
+        
+        if(this.options.continuous == true){
+            // To continously advance forward, we take first child and insert it to the back of the line. 
+            // `.after(' ')` is required because DOM Objects usually have spaces between them that are removed when appending and prepending
+            var $wrapper = this.element;
+            $wrapper.find('>:first-child').appendTo($wrapper).after(' ');
+        }
     }
     
     Cykol.prototype.prevSlide = function(){
-        this.advanceToSlide(this.activeSlide.prev());
+        if(this.options.continuous == true){
+            // To advance backward, we take the last child and stick it on the front.
+            var $wrapper = this.element;
+            $wrapper.find('>:last-child').prependTo($wrapper).after(' ');
+        }
+        
+        this.advanceToSlide(this.activeSlide.prev());        
     }
     
     /* Add a hook so we can use jQuery syntax to call our plugin */
