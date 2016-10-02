@@ -56,7 +56,14 @@
     </div>
     
     <script>
-        var c1 = $('#image-carousel').cykol();
+        var c1 = $('#image-carousel').cykol({
+            onInit: function(){
+                console.log("Setup");
+            },
+            onAnimation: function(){
+                console.log("Called After");
+            }
+        });
         var c2 = $('#div-carousel').cykol();
     </script>
     

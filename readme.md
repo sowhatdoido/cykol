@@ -1,4 +1,4 @@
-# Cykle Slider
+# Cykol Slider
 Javascript carousel written as a technical abilities test for TeamOne.
 
 ### Specifications
@@ -26,10 +26,19 @@ I'm want to write a relatively light weight carousel plugin that leverages CSS3 
 I also want to focus on code reuse: multiple instances of the plugin should able to run independently of each other on the same page, each with its own configurations. I'd also like to support callback features so that developers can handle events without having to edit the source directly.
 
 
-#### Syntax
+### Syntax
 Create a div wrapper that contains a collection of `img` or `div` tags. You will be able to instantiate cykol by calling either:
 ```
 var c1 = new Cykol($('#div-wrapper'), {...});
 or
 var c2 = $('#div-wrapper').cykol({...}); // added since we're using jQuery
 ```
+
+### Options
+- `onInit`: Function to be run after a new cykol instance is created
+- `onAnimation`: Function to be run after a transition starts
+
+
+### Limitations
+Due to time restraints and decisions made during the planning process, there are some limitations to what this carousel can do. I'm documenting the ones I can think of here so that I can work on it in the future.
+- `onAnimation` technically calls as the animation starts as we don't track the animation duration in javascript. If we add an event listener we can break this callback into `beforeAnimation`, `duringAnimation`, and `afterAnimation` calls, which would be more useful with slower animation times.

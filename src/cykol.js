@@ -19,6 +19,8 @@
         
         $wrapper.addClass('cykol-wrapper');
         this.setActiveSlide($wrapper.find('>:nth-child(2)'));
+        
+        if(typeof this.options.onInit == 'function') this.options.onInit(); //Callback function run after initialization
     }
     
     Cykol.prototype.setActiveSlide = function(slide){
@@ -46,6 +48,7 @@
     
     Cykol.prototype.advanceToSlide = function(slide){
         this.setActiveSlide(slide);
+        if(typeof this.options.onAnimation == 'function') this.options.onAnimation(); // Callback function run after slide transition starts.
     }
     
     Cykol.prototype.nextSlide = function(){
