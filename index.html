@@ -13,18 +13,18 @@
 <body>
     <legend>Image Carousel</legend>
     <div id="image-carousel">
-        <img src="http://placehold.it/200x200" class="first" alt="">
-        <img src="http://placehold.it/200x200" alt="">
-        <img src="http://placehold.it/200x200" alt="">
-        <img src="http://placehold.it/200x200" alt="">
-        <img src="http://placehold.it/200x200" alt="">
-        <img src="http://placehold.it/200x200" alt="">
-        <img src="http://placehold.it/200x200" alt="">
-        <img src="http://placehold.it/200x200" alt="">
-        <img src="http://placehold.it/200x200" alt="">
-        <img src="http://placehold.it/200x200" alt="">
-        <img src="http://placehold.it/200x200" alt="">
-        <img src="http://placehold.it/200x200" alt="">
+        <img src="http://placehold.it/480x300" class="first" alt="">
+        <img src="http://placehold.it/480x300" alt="">
+        <img src="http://placehold.it/480x300" alt="">
+        <img src="http://placehold.it/480x300" alt="">
+        <img src="http://placehold.it/480x300" alt="">
+        <img src="http://placehold.it/480x300" alt="">
+        <img src="http://placehold.it/480x300" alt="">
+        <img src="http://placehold.it/480x300" alt="">
+        <img src="http://placehold.it/480x300" alt="">
+        <img src="http://placehold.it/480x300" alt="">
+        <img src="http://placehold.it/480x300" alt="">
+        <img src="http://placehold.it/480x300" alt="">
     </div>
    
     <legend>DIV Carousel</legend>
@@ -56,15 +56,7 @@
     </div>
     
     <script>
-        var c1 = $('#image-carousel').cykol({
-            continuous: 1,
-            onInit: function(){
-                console.log("Setup");
-            },
-            onAnimation: function(){
-                console.log("Called After");
-            }
-        });
+        var c1 = $('#image-carousel').cykol();
         var c2 = $('#div-carousel').cykol();
     </script>
     

@@ -36,6 +36,7 @@ var c2 = $('#div-wrapper').cykol({...}); // added since we're using jQuery
 
 ### Options
 - `continuous`: Takes `true || false`. Sets up carousel to loop or end at the edges.
+- `swipe`: Takes `true || false`. Determines whether bindings for swipe events will occur.
 - `onInit`: Function to be run after a new cykol instance is created
 - `onAnimation`: Function to be run after a transition starts
 
@@ -43,3 +44,4 @@ var c2 = $('#div-wrapper').cykol({...}); // added since we're using jQuery
 ### Limitations
 Due to time restraints and decisions made during the planning process, there are some limitations to what this carousel can do. I'm documenting the ones I can think of here so that I can work on it in the future.
 - `onAnimation` technically calls as the animation starts as we don't track the animation duration in javascript. If we add an event listener we can break this callback into `beforeAnimation`, `duringAnimation`, and `afterAnimation` calls, which would be more useful with slower animation times.
+- Swipe functionality could probably be handled better by a third party script. I custom wrote mine because the specifications said only to use jQuery for DOM manipulation and jQuery doesn't support swipe events unless you package jQuery UI. Works well enough though!

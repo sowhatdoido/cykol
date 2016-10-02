@@ -49,8 +49,8 @@
         Works best when slides are all the same size but
         the rule of them is to set them to the size of your largest image.
     */
-    max-height: 250px; 
-    max-width: 250px;
+    max-width: 480px;
+    max-height: 300px; 
 }
 .cykol-slide-preview {
     /* 
