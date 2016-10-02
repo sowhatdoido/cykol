@@ -26,3 +26,10 @@ I'm want to write a relatively light weight carousel plugin that leverages CSS3 
 I also want to focus on code reuse: multiple instances of the plugin should able to run independently of each other on the same page, each with its own configurations. I'd also like to support callback features so that developers can handle events without having to edit the source directly.
 
 
+#### Syntax
+Create a div wrapper that contains a collection of `img` or `div` tags. You will be able to instantiate cykol by calling either:
+```
+var c1 = new Cykol($('#div-wrapper'), {...});
+or
+var c2 = $('#div-wrapper').cykol({...}); // added since we're using jQuery
+```

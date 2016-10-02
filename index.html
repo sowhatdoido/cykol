@@ -3,12 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    
+    <link rel="stylesheet" href="src/cykol.css">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--script src="node_modules/jquery/dist/jquery.min.js"></script-->
+    <script src="src/cykol.js"></script>
 </head>
 <body>
+    <legend>Image Carousel</legend>
+    <div id="image-carousel">
+        <img src="http://placehold.it/200x200" alt="">
+        <img src="http://placehold.it/200x200" alt="">
+        <img src="http://placehold.it/200x200" alt="">
+        <img src="http://placehold.it/200x200" alt="">
+        <img src="http://placehold.it/200x200" alt="">
+        <img src="http://placehold.it/200x200" alt="">
+        <img src="http://placehold.it/200x200" alt="">
+        <img src="http://placehold.it/200x200" alt="">
+        <img src="http://placehold.it/200x200" alt="">
+        <img src="http://placehold.it/200x200" alt="">
+        <img src="http://placehold.it/200x200" alt="">
+        <img src="http://placehold.it/200x200" alt="">
+    </div>
+   
+    <legend>DIV Carousel</legend>
+    <div id="div-carousel">
+        <div>
+            <h2>Hello World</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div>
+            <h2>Hello World</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div>
+            <h2>Hello World</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div>
+            <h2>Hello World</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div>
+            <h2>Hello World</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div>
+            <h2>Hello World</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </div>
+    
     <script>
-        alert($(window).length);
+        var c1 = $('#image-carousel').cykol();
+        var c2 = $('#div-carousel').cykol();
     </script>
+    
+    <!-- Example Page Styles -->
+    <style>
+        html, 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", "Roboto", "Oxygen", 
+    "Ubuntu", "Cantarell", "Fira Sans", 
+    "Droid Sans", "Helvetica Neue", sans-serif;
+        }
+        
+        legend {
+            display: block;
+            font-size: 26px;
+            border-bottom: 1px solid;
+        }
+    </style>
 </body>
 </html>
