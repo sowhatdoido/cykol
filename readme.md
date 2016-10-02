@@ -7,6 +7,19 @@ Carousel should shows three images: thumbnail, main, and thumbnail. Clicking on 
 ### Dependencies
 The only dependency on this project is `jQuery` - used only for DOM manipulation and event binding. This plugin could be rewritten in a dependency free manner but was not simply due to the fact that jQuery allows you to short hand many javascript calls. Maybe I'll try writing a vanilla JS version in the future!
 
+I created a `package.json` that will include `jQuery 3.1.1` locally, but I'm also using a CDN to deliver the script so that this project can be hosted on github pages at a later point. To set up locally, just run:
+```
+npm install
+```
+and replace
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+```
+with
+```
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+```
+
 ### The Approach
 I'm want to write a relatively light weight carousel plugin that leverages CSS3 animations with hardware acceleration to enhance performance. I've written carousels in the past that uses calculations and jQuery's `.animate()` calls to move a rail within a parent container; this time I'd like to keep calculations to a minimum and focus on simplicity.
 
