@@ -35,9 +35,11 @@ var c2 = $('#div-wrapper').cykol({...}); // added since we're using jQuery
 ```
 
 #### On Responsive Support and Other CSS things
-Since the animation portion of the plugin is driven by CSS3, you can use CSS edits or media queries to customize your carousel. In a image only carousel for instance, adding `max-width: 100%;` on `.cykol-slide` is enough to make it responsive. Custom easing can also be added by editing the `transition` css property.
+Since the animation portion of the plugin is driven by CSS3, you can use CSS edits or media queries to customize your carousel. In a image only carousel for instance, adding `max-width: 100%;` on `.cykol-slide` is enough to make it responsive. 
 
 ### Options
+- `duration`: Time in milliseconds for animation to complete
+- `easing`: CSS3 defined easing (`ease`, `linear`, `cubic-bezier`, etc)
 - `continuous`: Takes `true || false`. Sets up carousel to loop or end at the edges.
 - `swipe`: Takes `true || false`. Determines whether bindings for swipe events will occur.
 - `onInit`: Function to be run after a new cykol instance is created

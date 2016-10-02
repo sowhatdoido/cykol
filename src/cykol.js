@@ -2,6 +2,8 @@
     var defaults = {
         continuous: true, //Set to false for the carousel to stop at the edges
         swipe: true, //Set to false to disable swipe support
+        duration: 250, //animation duration in ms
+        easing: 'ease' //linear, ease, or other CSS3 supported easing calls
         //timeout: 0 //Time to auto advance to next in ms, 0 disables the feature
     };
     
@@ -19,6 +21,7 @@
     };
     
     Cykol.prototype.init = function(){
+        var instance = this;
         var $wrapper = this.element;
         
         $wrapper.children().addClass('cykol-slide');
@@ -34,7 +37,21 @@
         }
         
         //Event Bindings
-        this.initEventBindings();        
+        this.initEventBindings();       
+        
+        //Attach transition css live for easier configuration
+        //Wrapped in a setTimeout to delay the animation trigger on load
+        setTimeout(
+            function(){
+                var transition = 'all ' + instance.options.duration + 'ms ' + instance.options.easing;
+                instance.element.find('.cykol-slide').css({
+                    '-webkit-transition': transition,
+                    '-o-transition': transition,
+                    'transition': transition
+                });
+            }
+        , 0);
+        
                 
         if(typeof this.options.onInit == 'function') this.options.onInit(); //Callback function run after initialization
     }

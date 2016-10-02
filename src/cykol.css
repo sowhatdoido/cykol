@@ -34,13 +34,6 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    
-    /*
-        You can adjust the easing and duration here.
-    */
-    -webkit-transition: all ease 5s;
-    -o-transition: all ease 5s;
-    transition: all ease 5s;
 }
 .cykol-slide-active,
 .cykol-slide-preview {
