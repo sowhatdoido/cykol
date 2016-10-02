@@ -1,0 +1,68 @@
+.cykol-wrapper {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.cykol-wrapper:before {
+    content: "";
+    margin-left: -100%;
+}
+.cykol-wrapper:after {
+    content: "";
+    margin-right: -100%;
+}
+
+.cykol-slide {
+    max-height: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: normal;
+    display: inline-block;
+    vertical-align: middle;
+    
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    
+    /*
+        You can adjust the easing and duration here.
+    */
+    -webkit-transition: all ease 250ms;
+    -o-transition: all ease 250ms;
+    transition: all ease 250ms;
+}
+.cykol-slide-active,
+.cykol-slide-preview {
+    /* 
+        These values will affect the smoothness of
+    the animation.
+        Works best when slides are all the same size but
+        the rule of them is to set them to the size of your largest image.
+    */
+    max-height: 250px; 
+    max-width: 250px;
+}
+.cykol-slide-preview {
+    /* 
+        You can change the scale of the thumbnails here
+    */
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+}
+.cykol-slide-active {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}

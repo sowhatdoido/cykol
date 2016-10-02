@@ -20,6 +20,7 @@
     Cykol.prototype.init = function(){
         var $wrapper = this.element;
         
+        $wrapper.children().addClass('cykol-slide');
         $wrapper.addClass('cykol-wrapper');
         
         if(this.options.continuous == true){
