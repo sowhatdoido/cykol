@@ -52,10 +52,8 @@
             }
         , 0);
         
-        //Start auto if set
-        if(this.options.timeout > 0){
-            this.autoplay();
-        }
+        // Call advance to the slide you're already on to cleanly trigger all the events bound to next slide, including autoplay and onAnimation
+        this.advanceToSlide(this.activeSlide);
                 
         if(typeof this.options.onInit == 'function') this.options.onInit(); //Callback function run after initialization
     }
@@ -131,7 +129,7 @@
     
     Cykol.prototype.advanceToSlide = function(slide){
         this.setActiveSlide(slide);
-        if(typeof this.options.onAnimation == 'function') this.options.onAnimation(); //Callback function run after slide transition starts.
+        if(typeof this.options.onAnimation == 'function') this.options.onAnimation(this.activeSlide); //Callback function run after slide transition starts.
         
         if(this.options.timeout > 0){
             if(this.autoplayTimer) clearInterval(this.autoplayTimer);

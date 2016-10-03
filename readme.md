@@ -44,7 +44,7 @@ Since the animation portion of the plugin is driven by CSS3, you can use CSS edi
 - `swipe`: Takes `true || false`. Determines whether bindings for swipe events will occur.
 - `timeout`: Default is `0`. Time in milliseconds for autoplaying the carousel
 - `onInit`: Function to be run after a new cykol instance is created
-- `onAnimation`: Function to be run after a transition starts
+- `onAnimation`:  Function to be run after a transition starts. Accepts a parameter to target the current active slide. (`function(activeSlide){}`)
 
 
 ### Limitations
