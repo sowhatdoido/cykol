@@ -27,15 +27,24 @@ I also want to focus on code reuse: multiple instances of the plugin should able
 
 
 ### Get Started
-Create a div wrapper that contains a collection of `img` or `div` tags. You will be able to instantiate cykol by calling either:
+Animations leverage the use of `max-height` and `max-width` to obtain a smooth transition. It's recommended that you set these properties for `.cykol-slide` based on the largest image. Not doing so will still work, but result in a slightly jerky animation depending on the size of the discrepancy.
+
+Create a div wrapper that contains a collection of `img` or `div` tags. 
 ```
-var c1 = new Cykol($('#div-wrapper'), {...});
+<div id="carousel">
+    <img src="http://placehold.it/300x300" />
+    ...
+</div>
+```
+You will be able to instantiate cykol by calling either:
+```
+var c1 = new Cykol($('#carousel'), {...});
 or
-var c2 = $('#div-wrapper').cykol({...}); // added since we're using jQuery
+var c2 = $('#carousel').cykol({...}); // added since we're using jQuery
 ```
 
 #### On Responsive Support and Other CSS things
-Since the animation portion of the plugin is driven by CSS3, you can use CSS edits or media queries to customize your carousel. In a image only carousel for instance, adding `max-width: 100%;` on `.cykol-slide` is enough to make it responsive. 
+Since the animation portion of the plugin is driven by CSS3, you can use CSS edits or media queries to customize your carousel. In a image only carousel for instance, adding `max-width: 100%;` on `.cykol-slide img` is enough to make it responsive. 
 
 ### Options
 - `duration`: Time in milliseconds for animation to complete

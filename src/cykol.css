@@ -7,6 +7,10 @@
     font-size: 0;
 }
 
+.cykol-wrapper img {
+    max-width: 100%;
+}
+
 .cykol-wrapper:before {
     content: "";
     margin-left: -100%;
@@ -43,7 +47,7 @@
         Works best when slides are all the same size but
         the rule of them is to set them to the size of your largest image.
     */
-    max-width: 480px;
+    max-width: 400px;
     max-height: 300px; 
 }
 .cykol-slide-preview {
