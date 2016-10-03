@@ -1,4 +1,4 @@
-# Cykol Slider
+# [Cykol Slider](https://sowhatdoido.github.io/cykol/)
 Javascript carousel written as a technical abilities test for TeamOne.
 
 ### Specifications
