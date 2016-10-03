@@ -20,6 +20,9 @@ with
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 ```
 
+### Build
+`package.json` also includes a reference to `node-minify`. If you make a change to the `src/*` files, run `node build.js` to create new minified files.
+
 ### The Approach
 I'm want to write a relatively light weight carousel plugin that leverages CSS3 animations with hardware acceleration to enhance performance. I've written carousels in the past that uses calculations and jQuery's `.animate()` calls to move a rail within a parent container; this time I'd like to keep calculations to a minimum and focus on simplicity.
 
@@ -27,6 +30,8 @@ I also want to focus on code reuse: multiple instances of the plugin should able
 
 
 ### Get Started
+To get started, include `dist/cykol.min.css` and `dist/cykol.min.js`.
+
 Animations leverage the use of `max-height` and `max-width` to obtain a smooth transition. It's recommended that you set these properties for `.cykol-slide` based on the largest image. Not doing so will still work, but result in a slightly jerky animation depending on the size of the discrepancy.
 
 Create a div wrapper that contains a collection of `img` or `div` tags. 
