@@ -12,8 +12,8 @@
 </head>
 <body>
     <div class="section">
-        <legend>Cykol Carousel</legend>
-        <p>Created by me (<a href="http://franklintran.com">Frank Tran</a>) as a technical skills test for TeamOne. This first carousel should meet all the requirements asked for the submission.</p>
+        <legend><a href="https://github.com/sowhatdoido/cykol">Cykol Carousel</a></legend>
+        <p>Created as a technical skills test for TeamOne. This first carousel should meet all the requirements asked for the submission.</p>
         <div id="main-carousel">
             <div>
                 <img src="http://lorempixel.com/400/300/cats?rand=1" alt="Slide #1">
@@ -96,7 +96,6 @@
             var c1 = $('#main-carousel').cykol({
                 onAnimation: function(activeSlide){
                     var text = activeSlide.find('img').attr('alt');
-                    console.log(text);
                     $('#main-description').html(text);
                 }
             });
@@ -328,8 +327,9 @@
     
     <div class="section">
         <legend>Thank you!</legend>
-        <p>There are a few more flags that aren't impressive enough to demonstrate but you can still them check out on the github page. Feel free to fork this project and/or open issues if you can think of improvements. Don't forget to check out my personal website!</p>
+        <p>There are a few more flags that aren't impressive enough to demonstrate but you can still them check out on <a href="https://github.com/sowhatdoido/cykol">the github page</a>. Feel free to fork this project and/or open issues if you can think of improvements. Don't forget to check out <a href="http://franklintran.com">my personal website</a> and <a href="https://github.com/sowhatdoido">github</a>!</p>
     </div>
+    
     
     <!-- Example Page Styles -->
     <style>
@@ -360,10 +360,18 @@
             margin-bottom: 100px;
         }
         
+        a {
+            color: #f65a18;
+        }
+        
         legend {
             display: block;
             font-size: 26px;
-            border-bottom: 1px solid;
+            border-bottom: 1px solid lightgray;
+        }
+        
+        legend a {
+            text-decoration: none;
         }
         
         p {
